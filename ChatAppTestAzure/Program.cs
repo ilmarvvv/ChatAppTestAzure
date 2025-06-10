@@ -13,7 +13,7 @@ builder.Services.AddSignalR().AddAzureSignalR();
 builder.Services.AddSingleton<SentimentService>();
 
 builder.Services.AddDbContext<ChatDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
